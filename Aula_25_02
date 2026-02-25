@@ -1,0 +1,104 @@
+IA - Técnicas ou metodologia
+  - SISTEMAS DE COMPORTAMENTO INTELIGENTE
+    - base de conhecimento
+      - armazenamento de experiência
+    - motor de raciocínio / raciocínio automatizado (dedução, indução)
+      - métodos de busca (força bruta; SMA)
+        cegos: amplitude e profundidade
+        heurísticos: subida de encosta, guloso, A*, Algoritmos Genéticos
+    - Aprendizado de máquina - reconhecer padrões por repetição
+      - redes neurais
+
+- MÉTODOS DE BUSCA
+  - Modelagem do problema/ Solução
+    1) Estados(inicial,construtor, intermediários/construtor2, final)
+    2) Regras de transição -> métodos que modificam o objeto
+    3) Restrição (estado que não pode ser gerado)
+    4) Visitados (lista ou uma árvore ou um hashmap)
+    5) Função objetivo
+
+A) Problema das Torres de Hannoi
+Estados
+//Toda pilha tem os seguintes comandos: empty,peek,push/add,pop,remove
+  Stack t1 = new Stack();
+  Stack t2 = new Stack();
+  Stack t3 = new Stack();
+
+Estado.Inicial
+  t1.push(3)
+  t1.push(2)
+  t1.push(1)
+
+Estado Final ou Função Objetivo/Meta
+  t1.empty() && t2.empty()
+
+Regras de Transição
+  r1 - mover t1 para t2
+  if (ehValido(t1,t2))
+  {
+    public void MoverT1_T2() {
+      t2.push(t1.pop());
+    }
+    Estado novo = new Estado(t1,t2,t3,"movendo topo 1")
+  }
+
+  r2 - mover t1 para t3
+  if (ehValido(t1,t3))
+  {
+    public void MoverT1_T3() {
+      t3.push(t1.pop());
+    }
+  }
+
+  r3 - mover t2 para t1
+  if (ehValido(t2,t1))
+  {
+    public void MoverT2_T1() {
+      t1.push(t2.pop());
+    }
+  }
+
+  r4 - mover t2 para t3
+  if (ehValido(t2,t3))
+  {
+    public void MoverT2_T3() {
+      t3.push(t2.pop());
+    }
+  }
+
+  r5 - mover t3 para t1
+  if (ehValido(t3,t1))
+  {
+    public void MoverT3_T1() {
+      t1.push(t3.pop());
+    }
+  }
+
+  r6 - mover t3 para t2
+  if (ehValido(t3,t2))
+  {
+    public void MoverT3_T2 () {
+      t2.push(t3.pop());
+    }
+  }
+
+Restrição
+  public boolean ehValido(Stack Origem,Stack Destino)
+  {
+    if (Origem.empty())
+    {
+      return false;
+    }
+
+    if ((int)Origem.peek() > (int)Destino.peek())
+    {
+      return false;
+    }
+
+    return true;
+  }
+
+
+Visitados - Lista ou arvore ou hashmap
+["[321][][]" , "[32][1][]"]
+  
