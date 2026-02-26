@@ -39,7 +39,11 @@ Regras de Transição
     public void MoverT1_T2() {
       t2.push(t1.pop());
     }
-    Estado novo = new Estado(t1,t2,t3,"movendo topo 1")
+    Estado novo = new Estado(t1,t2,t3,"movendo topo t1 para o t2")
+    if (!visitados.contains(novo))
+    {
+      visitados.push(novo)
+    }
   }
 
   r2 - mover t1 para t3
@@ -98,7 +102,85 @@ Restrição
     return true;
   }
 
-
 Visitados - Lista ou arvore ou hashmap
 ["[321][][]" , "[32][1][]"]
+
+
+
+Problemas das Jarras
+
+jarra1 suporta 4 litros
+jarra2 suporta 3 litros
+Torneia que jorra agua infinita
+
+Objetivo: deixar em uma das jarras 2 litros
+
+class Estado()
+{
+  int jarra1
+  int jarra2
+
+  public Estado(int j1,int j2)
+  {
+    this.j1 = j1;
+    this.j2 = j2;
+  }
+
+  public boolean ehMeta()
+  {
+    return((this.j1 == 2 && this.j2 == 0) || (this.j1 == 0 && this.j2 == 2 ))
+  }
+
+
+  public void Encherj1()
+  {
+    this.j1 = 3;
+  }
+
+  public void Encherj2()
+  {
+    this.j2 = 3;
+  }
+
+  public void esvaziarJ1()
+  {
+    this.j1 = 0;
+  }
+
+  public void esvaziarJ2()
+  {
+    this.j2 = 0;
+  }
+
+
+  public void DespejarJ2_J1()
+  {
+    int j1 = this.j1;
+    int j2 = this.j2;
+
+    if(j2 > (4 - j1))
+    {
+      j2 = j2 - (4 - j1);
+      j1 = 4;
+    }else
+    {
+      j1 = j1 + j2;
+      j2 = 0;
+    }
+
+    Estado novo = new Estado(j1,j2);
+    if (!visitados.contains(novo))
+    {
+      visitados.add(novo);
+    }
+    
+  }
+}
+
+class Roda() 
+{
+  psvm()
+{
   
+}
+}
