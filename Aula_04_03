@@ -1,0 +1,40 @@
+Maze Ruuner
+
+1)Estados
+Estado Contendo = Matriz[n,n] - char
+                  'E' - Entrada = linhaEntrada e colunaEntrada (int)
+                  'S' - Saida = LinhaSaida e colunaSaida (int)
+                  '@' - Obstaculo
+
+EstadoInicial = 'E' sorteado em linha e coluna
+                'S' sorteado em linha e coluna
+                '@' sorteados em linhas e colunas validas
+
+EstadoSaida = linhaEntrada == LinhaSaida
+                          &&
+              colunaEntrada == colunaSaida
+
+
+2)Regras de transição:
+  Cima:  LinhaEntrada--
+  Baixo:  LinhaEntrada++
+  Esquerda: colunaEntrada --
+  Direita: colunaEntrada ++
+
+3)Restriçoes:
+  Cima:  
+    linhaEntrada == 0 
+  Baixo:  
+    linhaEntrada == n - 1
+  Esquerda:
+    colunaEntrada == 0
+  Direita:
+    colunaEntrada == n - 1
+  'E' == '@' - Obstaculo
+
+4)Visitados
+  Guardar = ['linhaEntrada', 'colunaEntrada']
+
+5)Função Objetivo
+  linhaEntrada == linhaSaida
+  colunaEntrada == colunaSaida
