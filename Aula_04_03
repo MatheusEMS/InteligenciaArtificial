@@ -38,3 +38,38 @@ EstadoSaida = linhaEntrada == LinhaSaida
 5)Função Objetivo
   linhaEntrada == linhaSaida
   colunaEntrada == colunaSaida
+
+
+
+Problema dos Missionários e Canibais
+
+Há 3 missionários e 3 canibais. Há também um barco que vai da margem esquerda para a margem direita e vice-versa, 
+sempre levando uma ou duas pessoas. Todas as pessoas estão na margem esquerda e precisam ir para a margem direita. 
+Porém, há restrições: em momento algum pode ficar mais canibais do que missionários em uma das margens.
+
+
+1)Estados
+  MisEsquerda = 0 a 3
+  MisDireita= 0 a 3
+  CanEsquerda = 0 a 3
+  CanDireita = 0 a 3
+  barco = esquerda ou direita
+
+  EstadoInicial
+    MisEsquerda = 3
+    MisDireita= 3
+    CanEsquerda = 0
+    CanDireita = 0
+
+2)Regras de transição:
+
+3)Restriçao
+  MisEsquerda < CanEsquerda - 0 não é comparação, pode ficar 1 canibal sozinho
+  MisDireita < CanDireita
+  
+
+4)Visitados
+
+
+5)Função Objetivo
+ 
