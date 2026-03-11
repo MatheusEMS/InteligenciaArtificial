@@ -1,0 +1,102 @@
+Problema da travessia da ponte
+
+Há 4 pessoas: cientista, zelador, professora e aluno. Que precisam passar pela ponte.
+
+Cada um tem um tempo de travessia:
+
+aluno: leva 1 minuto para cruzar a ponte
+professora: leva 2 minutos
+zelador: 5 minutos
+cientista: 10 minutos
+
+O problema é: qual a sequência de travessia para que o tempo total seja no máximo de 17 minutos.
+
+Contudo, para cruzar a ponte é preciso usar uma lanterna e no máximo duas pessoas podem cruzar a ponte. Qualquer pessoa cruzando a ponte precisa segurar a lanterna.
+
+1)Estados
+
+  Estado Contendo
+    OndeEstaLanterna = esq ou dir
+    QtdEsquerda = 0 a 4
+    QtdDireita = 0 a 4
+    aluno = esq ou dir
+    professora = esq ou dir
+    zelador = esq ou dir
+    cientista = esq ou dir
+    QuemTaAtravessando = A - aluno
+                              P - professor
+                              Z - zelador
+                              C - cientista
+
+  Estado Inicial
+    aluno = esq
+    professora = esq
+    zelador = esq
+    cientista = esq
+
+    alunoTempo = 1
+    professoraTempo = 2
+    zeladorTempo = 5
+    cientistaTempo = 10
+
+    QtdEsquerda = 4
+    QtdDireita = 0
+
+    tempoTravessia = 0
+    quemTemLanterna = null
+    OndeEstaLanterna = esq
+
+2)Regras de transição:
+  Atravessar:
+    QuemTaAtravessando = A e/ou P e/ou Z e/ou C
+    aluno = dir ou esq
+    professora = dir ou esq
+    zelador = dir ou esq
+    cientista = dir ou esq
+
+    OndeEstaLanterna = dir ou esq
+    QtdEsquerda = quem tem "esq"
+    QtdDireita = quem tem "dir"
+
+    QuemTemLanterna = A ou P ou Z ou C
+    tempo += alunoTempo ou professoraTempo ou zeladorTempo ou cientistaTempo
+
+3)Restriçao
+  Atravessar:
+    OndeEstaLanterna == QuemTaAtravessando = dir
+
+    QuemTaAtravessando.Count <= 2
+      aluno != aluno
+      professora != professora
+      zelador != zelador
+      cientista != cientista
+
+    if OndeEstaLanterna
+      
+      QtdEsquerda -+
+      QtdDireita +=
+    else  
+      QtdEsquerda +=
+      QtdDireita -+
+
+    OndeEstaLanterna != OndeEstaLanterna
+    tempo += QuemTaAtravessando   maior tempo
+
+
+4)Visitados
+  aluno
+  professora
+  zelador 
+  cientista 
+  OndeEstaLanterna
+  tempo
+  QtdEsquerda
+  QtdDireita
+
+5)Função Objetivo
+    aluno = dir
+    professora = dir
+    zelador = dir
+    cientista = dir
+
+    tempo <= 17
