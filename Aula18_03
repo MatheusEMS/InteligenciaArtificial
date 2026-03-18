@@ -1,0 +1,21 @@
+MÉTODOS DE BUSCA -> Tecnicas pde IA para "Motores" de raciocínio (dedutivo)
+  - Cega/Sem informação/ Força bruta
+    - Profundidade: Visitados,pilha (recursão)
+    - Largura ou amplitude: Visitados, fila
+      - Completo
+
+- Heuristíscas/Com informações
+  - Dica
+    - Especialista = Humano ou Matemática
+  -Custos
+    - Real
+    - Estimado
+    - Subida de encosta(climb hill)
+      -Profundidade
+        - Custo Real
+    -Guloso
+      - Amplitude
+        - Custo Estimado
+    -A estrela
+      - Amplitude
+        - Correçao de custos estimado
