@@ -1,0 +1,24 @@
+Revisão
+
+1)Base de conhecimento
+2)Motores de Raciocinio
+  -Deduzir de Força Bruta
+  -Cegos ou força
+    - Profundidade(Motor do prolog)-> Pilha
+    - Largura/Amplitude -> Fila
+  -Heuristicas ou Informação
+    -Dica
+      -Especialista
+      -Matematica
+    -Guloso
+      -Largura(Só olha o custo estimado)
+    -Custos
+      -Real
+      -Estimado
+    -Subida de encosto
+      -Profundidade
+    -A*
+      -Largura
+3)Machine Learning
+  - Reconhecer padrões por amostras
+
