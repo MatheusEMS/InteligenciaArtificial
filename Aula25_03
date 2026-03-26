@@ -22,3 +22,48 @@ Revisão
 3)Machine Learning
   - Reconhecer padrões por amostras
 
+Prolog
+
+%base.pl
+%fatos
+	%sentencas ou predicados ou assinaturas de funcoes
+
+%regras
+
+jogo("CS","Counter Strike",16,"FPS").
+jogo("LOL","League of Legends",18,"MOBA").
+jogo("AID","Alone in the Dark",18,"SH").
+jogo("GTA","Great Thief Auto",18,"SB").
+jogo("MC","Minecraft",0,"SB").
+
+tipo("SB","Sandbox").
+tipo("SH","Survival Horror").
+tipo("MOBA","Multiplayer Online Battle Arena").
+tipo("FPS","First Person Shoot").
+
+indicacaoLivre(NomeJogo) :- 
+    jogo(_,NomeJogo,Idade,_),
+    Idade == 0.
+
+progenitor(hebert,cleber).
+progenitor(hebert,homer).
+progenitor(homer,bart).
+progenitor(homer,lisa).
+progenitor(homer,meggy).
+progenitor(margy,bart).
+progenitor(margy,lisa).
+progenitor(margy,meggy).
+progenitor(bart,alex).
+progenitor(bart,tina).
+
+avo(A,N) :- 
+    progenitor(A,P),
+	progenitor(P,N).
+
+irmaos(A,B) :- progenitor(P,A),
+			   progenitor(P,B),
+			   A \= B.
+
+tio(T,S) :-
+    irmaos(I,T),
+    progenitor(I,S).
