@@ -69,3 +69,42 @@ localizacao_geral(Objeto,Resposta) :-
     esta_em(Objeto,Comodo),
     comodo_em(Comodo,Casa),
     Resposta = Casa.
+
+
+5 e 6)
+
+ingrediente('Pizza', 'Massa').
+ingrediente('Pizza', 'Farinha').
+ingrediente('Pizza', 'Queijo').
+ingrediente('Pizza', 'Molho').
+ingrediente('Canape', 'Massa folhada').
+ingrediente('Canape', 'Pao').
+
+vegano('Pao').
+vegano('Massa folhada').
+
+
+prato_vegano(Prato) :-
+    ingrediente(Prato, Item),
+    vegano(Item).
+
+#6
+
+filme('Sonic 3','Live Action').
+filme('The Batman','Acao').
+filme('Megamente','Animacao').
+filme('Alvin e os Esquilos','Live Action').
+filme('Spider-Man','Acao').
+filme('Gato de Botas 2','Animacao').
+
+usuario_gosta('matheus','Acao').
+usuario_gosta('matheus','Animacao').
+usuario_gosta('guilherme','Live Action').
+
+recomendar(Filme,Usuario) :-
+    usuario_gosta(Usuario,Genero),
+    filme(Filme,Genero).
+
+7)
+
+
