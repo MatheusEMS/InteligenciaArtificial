@@ -18,7 +18,7 @@ pode_cursar(Aluno,Disciplina) :-
     ja_cursou(Aluno,PreRequisito),
     pre_requisito(PreRequisito,Disciplina).
 
-#parte 2
+#2
 
 nota('matheus','Algoritimos',8).
 nota('matheus','Game Design',9).
@@ -40,3 +40,32 @@ resultado(Aluno,Disciplina,Resposta) :-
 
 3 e 4)
 
+
+estrada('Joao Pessoa','Recife').
+estrada('Recife','Aracaju').
+estrada('Natal','Joao Pessoa').
+estrada('Natal','Recife').
+
+pode_viajar(De,Para) :- 
+    estrada(De,Para).
+
+pode_viajar(De,Para) :- 
+    estrada(Para,De).
+
+#4
+
+esta_em('Abajur','Quarto').
+esta_em('Tapete','Sala').
+esta_em('Privada','Banheiro').
+esta_em('Panela','Cozinha').
+
+comodo_em('Quarto','Segundo').
+comodo_em('Sala','Primeiro').
+comodo_em('Banheiro','Segundo').
+comodo_em('Cozinha','Primeiro').
+
+
+localizacao_geral(Objeto,Resposta) :-
+    esta_em(Objeto,Comodo),
+    comodo_em(Comodo,Casa),
+    Resposta = Casa.
