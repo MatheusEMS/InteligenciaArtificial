@@ -1,0 +1,42 @@
+1 e 2)
+
+disciplina('Algoritimos').
+disciplina('Algoritimos II').
+disciplina('Jogos 2D').
+disciplina('Jogos 3D').
+disciplina('Game Design').
+
+ja_cursou('matheus','Algoritimos').
+ja_cursou('matheus','Game Design').
+
+
+
+pre_requisito('Algoritimos','Algoritimos II').
+pre_requisito('Jogos 2D','Jogos 3D').
+
+pode_cursar(Aluno,Disciplina) :-
+    ja_cursou(Aluno,PreRequisito),
+    pre_requisito(PreRequisito,Disciplina).
+
+#parte 2
+
+nota('matheus','Algoritimos',8).
+nota('matheus','Game Design',9).
+
+nota('guilherme','Jogos 3D',2).
+
+resultado(Aluno,Disciplina,Resposta) :-
+    nota(Aluno,Disciplina,Nota),
+    Nota >= 7,
+    Resposta = 'Aprovado'.
+
+
+resultado(Aluno,Disciplina,Resposta) :-
+    nota(Aluno,Disciplina,Nota),
+    Nota < 7,
+    Resposta = 'Reprovado'.
+
+
+
+3 e 4)
+
