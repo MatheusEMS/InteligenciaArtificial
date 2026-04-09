@@ -108,3 +108,67 @@ recomendar(Filme,Usuario) :-
 7)
 
 
+sobre('Bloco 1','Bloco 3').
+sobre('Bloco 3','Bloco 6').
+sobre('Bloco 8','Bloco 5').
+sobre('Bloco 11','Bloco 9').
+sobre('Bloco 7','Bloco 8').
+
+no_chao('Bloco 12').
+no_chao('Bloco 14').
+no_chao('Bloco 15').
+
+abaixo(X,Z) :-
+    sobre(X,Y),
+    Z = Y.
+
+bloco_livre(X) :-
+    sobre(X,Y),
+    not(sobre(Z,X)).
+
+bloco_livre(X) :-
+    no_chao(X).
+
+8 , 9 e 10)
+
+tem_escamas('Cobra').
+tem_escamas('Lagarto').
+tem_escamas('Cobra').
+tem_escamas('pangolim').
+tem_escamas('Crocodilo').
+
+aquatico('tartarugas').
+aquatico('Peixe').
+aquatico('Crocodilo').
+
+reptil(X) :-
+    tem_escamas(X),
+    aquatico(X).
+
+#9
+
+cliente('matheus',5222).
+cliente('guilherme',7).
+cliente('lucas',666).
+
+produto('SWITCH 2',4000).
+produto('Bis',4).
+produto('Quadro',800).
+
+pode_comprar(Nome,Item) :-
+    cliente(Nome,Conta),
+    produto(Item,Preco),
+    Conta >= Preco.
+
+#10
+
+venceu('Matheus','Guilherme').
+venceu('Matheus','Lucas').
+venceu('Matheus','Bernado').
+venceu('Guilherme','Lucas').
+venceu('Bernado','Guilherme').
+venceu('Lucas','Bernado').
+
+invicto(Jogador) :-
+    venceu(Jogador,Y),
+    not(venceu(Z,Jogador)).
