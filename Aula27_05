@@ -1,0 +1,4 @@
+SISTEMAS MULTIAGENTES
+  - foco é no agente - entidade de sw ou hw autonoma, proativa, flexível e com comunicação
+    - engine: thead, try-catch, sobrecarga, socket+ip+porta+protocolo
+      - JASON
