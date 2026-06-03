@@ -1,0 +1,11 @@
+REDES NEURAIS
+
+  SISTEMAS DE COMPORTAMENTO INTELIGENTE CONSTRUÍDO VIA TÉCNICAS DE IA
+    -base de conhecimento: prolog + sma
+    -motor de raciocínio: métodos de busca (profundidade,largura,subida de encosta,gulosa,a*,algoritmos genéricos) + sma
+    -aprendizado de máquina: sma + redes neurais
+
+REDES NEURAIS ARTIFICIAIS
+  -Inspirado no cérebro humano
+  -composta por unidade de geoprocessamento (neurônios artificiais) interconectados
+  -capaz de aprender e generalizar a partir de dados
